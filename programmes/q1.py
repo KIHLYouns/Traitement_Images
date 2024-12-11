@@ -1,7 +1,6 @@
 # Importation des bibliothèques nécessaires
 import numpy as np  # numpy pour la manipulation des tableaux
 import matplotlib.pyplot as plt  # matplotlib pour l'affichage des images
-from PIL import Image  # Pillow pour la manipulation des images
 
 def create_pbm_image(data, magic_number='P1'):
     """
@@ -73,11 +72,6 @@ def read_pgm_image(file_path):
     
     # Lire les dimensions de l'image
     width, height = map(int, lines[1].strip().split())
-    
-    # Lire la valeur maximale de gris
-    maxval = int(lines[2].strip())
-    if not (0 < maxval < 65536):
-        raise ValueError("maxval must be greater than 0 and less than 65536")
     
     # Lire les pixels de l'image
     data = []
