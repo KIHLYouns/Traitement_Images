@@ -1,20 +1,19 @@
-# Importation des bibliothèques nécessaires
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
 def transform_image(image_path, transformation, bits=8):
     """
-    Transforme une image couleur en image en niveaux de gris ou binaire
+    Transforme une image couleur en image en niveaux de gris ou binaire.
     
     Paramètres:
-    - image_path: chemin de l'image couleur
-    - transformation: type de transformation ('grayscale' ou 'binary')
-    - bits: nombre de bits pour l'image en niveaux de gris (par défaut 8)
+    - image_path : chemin de l'image couleur
+    - transformation : type de transformation ('grayscale' ou 'binary')
+    - bits : nombre de bits pour l'image en niveaux de gris (par défaut 8)
     """
     # Lire l'image couleur
     image = Image.open(image_path)
-    image = image.convert('RGB')  # Assurer que l'image est en RGB
+    image = image.convert('RGB')  # S'assurer que l'image est en RGB
     
     if transformation == 'grayscale':
         # Convertir en niveaux de gris
@@ -27,8 +26,8 @@ def transform_image(image_path, transformation, bits=8):
         
         # Afficher et sauvegarder l'image en niveaux de gris
         gray_image.show()
-        gray_image.save('résultats/gray_portrait.png')
-        print(f"L'image en niveaux de gris a été sauvegardée sous le nom 'gray_image.png'")
+        gray_image.save('résultats/portrait_gris.png')
+        print(f"L'image en niveaux de gris a été sauvegardée sous le nom 'gray_portrait.png'")
     
     elif transformation == 'binary':
         # Convertir en niveaux de gris
@@ -39,20 +38,26 @@ def transform_image(image_path, transformation, bits=8):
         
         # Afficher et sauvegarder l'image binaire
         binary_image.show()
-        binary_image.save('résultats/binary_portrait.png')
-        print(f"L'image binaire a été sauvegardée sous le nom 'binary_image.png'")
+        binary_image.save('résultats/portrait_binaire.png')
+        print(f"L'image binaire a été sauvegardée sous le nom 'binary_portrait.png'")
     else:
         print("Transformation non reconnue. Utilisez 'grayscale' ou 'binary'.")
 
-# Chemin de l'image couleur représentant votre portrait
-image_path = 'images_initiales/portrait.jpeg'
-
-# Demander à l'utilisateur de choisir la transformation
-transformation = input("Choisissez la transformation ('grayscale' ou 'binary'): ").strip().lower()
-
-# Si l'utilisateur choisit 'grayscale', demander le nombre de bits
-if transformation == 'grayscale':
-    bits = int(input("Entrez le nombre de bits pour l'image en niveaux de gris (1-8): ").strip())
-    transform_image(image_path, transformation, bits)
-else:
-    transform_image(image_path, transformation)
+if __name__ == "__main__":
+    # Chemin de l'image couleur représentant votre portrait
+    image_path = 'images_initiales/portrait.jpeg'
+    
+    # Demander à l'utilisateur de choisir la transformation
+    transformation = input("Choisissez la transformation ('grayscale' ou 'binary'): ").strip().lower()
+    
+    # Si l'utilisateur choisit 'grayscale', demander le nombre de bits
+    if transformation == 'grayscale':
+        try:
+            bits = int(input("Entrez le nombre de bits pour l'image en niveaux de gris (1-8): ").strip())
+            if not 1 <= bits <= 8:
+                raise ValueError
+            transform_image(image_path, transformation, bits)
+        except ValueError:
+            print("Entrée invalide pour les bits. Veuillez entrer un nombre entier entre 1 et 8.")
+    else:
+        transform_image(image_path, transformation)
