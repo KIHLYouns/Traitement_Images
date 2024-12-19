@@ -16,8 +16,8 @@ Ce projet de travaux pratiques (TP) a pour objectif de vous familiariser avec le
 Si vous utilisez Git, vous pouvez cloner le répertoire avec la commande suivante :
 
 ```zsh
-git clone https://github.com/KIHLYouns/traitement_image.git
-cd traitement_image
+git clone https://github.com/KIHLYouns/Traitement_Images.git
+cd Traitement_Images
 ```
 
 ## Structure du Projet
@@ -36,10 +36,6 @@ Traitement_image/
 │   ├── q3.py
 │   └── q5.py
 └── résultats/
-    ├── I_ad.pbm
-    ├── I_s.pbm
-    ├── I_p.png
-    └── I_nagao.png
 ```
 
 ## Utiliser un Environnement Virtuel
@@ -86,7 +82,7 @@ python3 programmes/q1.py
 
 ## Utilisation des Scripts Python
 
-### 1. q1.py : Manipulation d'Images Binaires
+### q1.py : Manipulation d'Images Binaires
 
 Ce script permet de créer, lire et afficher des images au format PBM (Portable Bitmap). Il effectue également des opérations arithmétiques sur des images binaires.
 
@@ -96,7 +92,7 @@ Ce script permet de créer, lire et afficher des images au format PBM (Portable 
 python3 programmes/q1.py
 ```
 
-### 2. q2.py : Génération d'Histogrammes
+### q2.py : Génération d'Histogrammes
 
 Ce script génère et affiche l'histogramme des canaux de couleur d'une image.
 
@@ -106,7 +102,7 @@ Ce script génère et affiche l'histogramme des canaux de couleur d'une image.
 python3 programmes/q2.py
 ```
 
-### 3. q3.py : Transformation d'Images Couleur
+### q3.py : Transformation d'Images Couleur
 
 Ce script transforme une image couleur en une image en niveaux de gris ou binaire, en fonction du choix de l'utilisateur.
 
@@ -116,7 +112,7 @@ Ce script transforme une image couleur en une image en niveaux de gris ou binair
 python3 programmes/q3.py
 ```
 
-### 4. q5.py : Application du Filtre de Nagao
+### q5.py : Application du Filtre de Nagao
 
 Ce script applique le filtre de Nagao à une image en niveaux de gris, avec une barre de progression pour suivre le traitement.
 
