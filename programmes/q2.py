@@ -55,7 +55,7 @@ def plot_histogram(image_path):
 
 if __name__ == "__main__":
     # Chemin de l'image couleur
-    image_path = 'images_initiales/portrait.jpeg'
+    image_path = 'images_initiales/portrait_youns.jpeg'
     
     # Affiche l'histogramme de l'image
     plot_histogram(image_path)

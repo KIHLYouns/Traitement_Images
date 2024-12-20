@@ -28,8 +28,9 @@ Traitement_image/
 │   ├── I1.pbm
 │   ├── I2.pbm
 │   ├── I_g.pgm
-│   ├── portrait_gris.png
-│   └── portrait.jpeg
+│   ├── image_gris.png
+│   ├── portrait_youns.jpeg
+│   └── thousand-yard_stare.jpeg
 ├── programmes/
 │   ├── q1.py
 │   ├── q2.py

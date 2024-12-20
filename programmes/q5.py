@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from tqdm import tqdm
 
-def read_image(filepath, resize_factor=0.1):
+def read_image(filepath, resize_factor):
     """
     Lit une image en niveaux de gris et la redimensionne si nécessaire.
     
     Paramètres:
     - filepath : chemin du fichier image
-    - resize_factor : facteur de redimensionnement (par défaut 0.1 pour réduire la taille à 10%)
+    - resize_factor : facteur de redimensionnement (0.1 => réduire la taille à 10%)
     
     Retourne:
     - image : image sous forme de tableau numpy 2D
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     try:
         # Lit et redimensionne l'image
         print("Chargement de l'image...")
-        image = read_image('images_initiales/portrait_gris.png', resize_factor=0.1)
+        image = read_image('images_initiales/image_gris.png', resize_factor=0.5)
         
         # Applique le filtre de Nagao
         print("Application du filtre de Nagao...")
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         plt.show()
         
         # Sauvegarde l'image filtrée
-        plt.imsave('résultats/portrait_nagao.png', filtered, cmap='gray')
+        plt.imsave('résultats/image_nagao.png', filtered, cmap='gray')
         
         print("Traitement terminé avec succès!")
     
