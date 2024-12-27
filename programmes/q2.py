@@ -51,7 +51,10 @@ def plot_histogram(image_path):
     plt.ylabel('Nombre de Pixels')
     
     plt.tight_layout()  # Ajuste les espaces pour une meilleure présentation
+    plt.savefig('résultats/histogramme_couleur.png')
+    
     plt.show()
+    plt.close()
 
 if __name__ == "__main__":
     # Chemin de l'image couleur
@@ -59,3 +62,4 @@ if __name__ == "__main__":
     
     # Affiche l'histogramme de l'image
     plot_histogram(image_path)
+    

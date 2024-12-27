@@ -35,6 +35,7 @@ Traitement_image/
 │   ├── q1.py
 │   ├── q2.py
 │   ├── q3.py
+│   ├── q4.py
 │   └── q5.py
 └── résultats/
 ```
